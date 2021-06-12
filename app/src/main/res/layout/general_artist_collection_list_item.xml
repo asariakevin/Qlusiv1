@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/thumbnail_general_artist_collection_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/title_general_artist_collection_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="When it rains it pours" />
+
+    <TextView
+        android:id="@+id/artist_name_general_artist_collection_item"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Kevin Asaria" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/support_amount_general_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Support: " />
+
+        <TextView
+            android:id="@+id/actual_support_amount_general_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 Ksh" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/supports_genearl_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supports: " />
+
+        <TextView
+            android:id="@+id/actual_supports_number_general_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20K" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/support_button_general_artist_collection_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support" />
+</LinearLayout>

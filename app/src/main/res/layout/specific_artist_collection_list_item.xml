@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/thumbnail_specific_artist_collection_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/title_specific_artist_collection_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="When it rains it pours" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/support_amount_specific_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Support: " />
+
+        <TextView
+            android:id="@+id/actual_support_amount_specific_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 Ksh" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/supports_specific_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supports: " />
+
+        <TextView
+            android:id="@+id/actual_supports_number_specific_artist_collection_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20K" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/support_button_specific_artist_collection_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support" />
+</LinearLayout>
