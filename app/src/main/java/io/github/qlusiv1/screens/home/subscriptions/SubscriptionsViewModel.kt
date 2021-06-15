@@ -18,9 +18,15 @@ class SubscriptionsViewModel : ViewModel() {
 
     init {
         Log.d("Viewmodel", "Initializing")
-        getSubscriptions()
+        //getSubscriptions()
+        mockSubscriptionsList()
     }
 
+    private fun mockSubscriptionsList(){
+        subscriptionsList.value = List(20){
+            Subscription(1, "Kevin", "Today", "Tomm")
+        }
+    }
     private fun getSubscriptions(){
 
         coroutineScope.launch {
