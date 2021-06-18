@@ -9,11 +9,11 @@
         android:name="io.github.qlusiv1.screens.home.HomeFragment"
         android:label="HomeFragment" >
         <action
-            android:id="@+id/action_homeFragment2_to_artistHomeFragment"
-            app:destination="@id/artistHomeFragment" />
+            android:id="@+id/action_homeFragment2_to_artistHomeNavHostActivity"
+            app:destination="@id/artistHomeNavHostActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/artistHomeFragment"
-        android:name="io.github.qlusiv1.screens.artistHome.ArtistHomeFragment"
-        android:label="ArtistHomeFragment" />
+    <activity
+        android:id="@+id/artistHomeNavHostActivity"
+        android:name="io.github.qlusiv1.screens.home.subscriptions_navhost.ArtistHomeNavHostActivity"
+        android:label="ArtistHomeNavHostActivity" />
 </navigation>

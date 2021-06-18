@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import io.github.qlusiv1.R
 import io.github.qlusiv1.network.Subscription
 
-class SubscriptionsAdapter : RecyclerView.Adapter<SubscriptionsAdapter.ViewHolder>() {
+class SubscriptionsAdapter(val clickListener: SubscriptionClickListener) : RecyclerView.Adapter<SubscriptionsAdapter.ViewHolder>() {
 
     var data = listOf<Subscription>()
     set(value){
@@ -36,7 +36,12 @@ class SubscriptionsAdapter : RecyclerView.Adapter<SubscriptionsAdapter.ViewHolde
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
         val subscription = data[position]
         holder.artistName.text = subscription.name
+        holder.artistName.setOnClickListener{clickListener.onclick(subscription.id)}
     }
 
 
+}
+
+class SubscriptionClickListener( val clickListener : (Int) -> Unit){
+    fun onclick(subscriptionId : Int) = clickListener(subscriptionId)
 }

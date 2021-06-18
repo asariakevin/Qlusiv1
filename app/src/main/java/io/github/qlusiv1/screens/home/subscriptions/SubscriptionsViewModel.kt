@@ -13,6 +13,8 @@ import kotlinx.coroutines.launch
 class SubscriptionsViewModel : ViewModel() {
     var subscriptionsList = MutableLiveData<List<Subscription>>()
 
+    var navigateToArtistHomePage = MutableLiveData<Boolean>()
+
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope( viewModelJob + Dispatchers.Main )
 
@@ -20,6 +22,7 @@ class SubscriptionsViewModel : ViewModel() {
         Log.d("Viewmodel", "Initializing")
         //getSubscriptions()
         mockSubscriptionsList()
+        navigateToArtistHomePage.value = false
     }
 
     private fun mockSubscriptionsList(){
@@ -50,6 +53,10 @@ class SubscriptionsViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
+    }
+
+    fun navigatedToArtistHome(){
+        navigateToArtistHomePage.value = false
     }
 
 }
