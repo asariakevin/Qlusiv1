@@ -14,6 +14,7 @@ class SubscriptionsViewModel : ViewModel() {
     var subscriptionsList = MutableLiveData<List<Subscription>>()
 
     var navigateToArtistHomePage = MutableLiveData<Boolean>()
+    var navigateToExploreActivity = MutableLiveData<Boolean>()
 
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope( viewModelJob + Dispatchers.Main )
@@ -23,6 +24,8 @@ class SubscriptionsViewModel : ViewModel() {
         //getSubscriptions()
         mockSubscriptionsList()
         navigateToArtistHomePage.value = false
+        navigateToExploreActivity.value = false
+        Log.d("Viewmodel", "Done Initializing")
     }
 
     private fun mockSubscriptionsList(){
@@ -57,6 +60,10 @@ class SubscriptionsViewModel : ViewModel() {
 
     fun navigatedToArtistHome(){
         navigateToArtistHomePage.value = false
+    }
+
+    fun navigatedToExploreActivity(){
+        navigateToExploreActivity.value = false
     }
 
 }

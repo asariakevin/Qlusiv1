@@ -7,13 +7,21 @@
     <fragment
         android:id="@+id/homeFragment2"
         android:name="io.github.qlusiv1.screens.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment2_to_artistHomeNavHostActivity"
             app:destination="@id/artistHomeNavHostActivity" />
+        <action
+            android:id="@+id/action_homeFragment2_to_exploreActivity"
+            app:destination="@id/exploreActivity" />
     </fragment>
     <activity
         android:id="@+id/artistHomeNavHostActivity"
-        android:name="io.github.qlusiv1.screens.home.subscriptions_navhost.ArtistHomeNavHostActivity"
+        android:name="io.github.qlusiv1.ArtistHomeNavHostActivity"
         android:label="ArtistHomeNavHostActivity" />
+    <activity
+        android:id="@+id/exploreActivity"
+        android:name="io.github.qlusiv1.ExploreActivity"
+        android:label="activity_explore"
+        tools:layout="@layout/activity_explore" />
 </navigation>

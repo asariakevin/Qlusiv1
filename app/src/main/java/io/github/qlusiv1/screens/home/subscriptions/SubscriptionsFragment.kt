@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.github.qlusiv1.R
 import io.github.qlusiv1.screens.home.HomeFragment
 import io.github.qlusiv1.screens.home.subscriptions_navhost.SubscriptionsNavHostFragment
@@ -19,6 +20,7 @@ class SubscriptionsFragment : Fragment() {
         fun newInstance() = SubscriptionsFragment()
     }
 
+    private lateinit var fab: FloatingActionButton
     private lateinit var viewModel: SubscriptionsViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +34,17 @@ class SubscriptionsFragment : Fragment() {
         val recycler = view.findViewById(R.id.subscriptions_recyclerview) as RecyclerView
         recycler.adapter = adapter
 
+        fab = view.findViewById(R.id.explore_fab) as FloatingActionButton
+        fab.setOnClickListener{
+            viewModel.navigateToExploreActivity.value = true
+        }
+
+        viewModel.navigateToExploreActivity.observe(viewLifecycleOwner, Observer {
+            if(it){
+                this.findNavController().navigate(R.id.action_homeFragment2_to_exploreActivity)
+            }
+            viewModel.navigatedToExploreActivity()
+        })
         viewModel.subscriptionsList.observe(viewLifecycleOwner, Observer { sublist ->  adapter.data = sublist })
         viewModel.navigateToArtistHomePage.observe(viewLifecycleOwner, Observer {
             if(it){
