@@ -3,18 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment2">
-    <fragment
-        android:id="@+id/homeFragment2"
-        android:name="io.github.qlusiv1.screens.home.HomeFragment"
-        android:label="HomeFragment">
-        <action
-            android:id="@+id/action_homeFragment2_to_artistHomeNavHostActivity"
-            app:destination="@id/artistHomeNavHostActivity" />
-        <action
-            android:id="@+id/action_homeFragment2_to_exploreActivity"
-            app:destination="@id/exploreActivity" />
-    </fragment>
+    app:startDestination="@id/homeFragment">
     <activity
         android:id="@+id/artistHomeNavHostActivity"
         android:name="io.github.qlusiv1.ArtistHomeNavHostActivity"
@@ -24,4 +13,15 @@
         android:name="io.github.qlusiv1.ExploreActivity"
         android:label="activity_explore"
         tools:layout="@layout/activity_explore" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="io.github.qlusiv1.screens.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_exploreActivity"
+            app:destination="@id/exploreActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_artistHomeNavHostActivity"
+            app:destination="@id/artistHomeNavHostActivity" />
+    </fragment>
 </navigation>

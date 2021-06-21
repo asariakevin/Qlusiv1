@@ -16,9 +16,6 @@ import io.github.qlusiv1.screens.home.subscriptions_navhost.SubscriptionsNavHost
 
 class SubscriptionsFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SubscriptionsFragment()
-    }
 
     private lateinit var fab: FloatingActionButton
     private lateinit var viewModel: SubscriptionsViewModel
@@ -39,18 +36,21 @@ class SubscriptionsFragment : Fragment() {
             viewModel.navigateToExploreActivity.value = true
         }
 
-        viewModel.navigateToExploreActivity.observe(viewLifecycleOwner, Observer {
-            if(it){
-                this.findNavController().navigate(R.id.action_homeFragment2_to_exploreActivity)
-            }
-            viewModel.navigatedToExploreActivity()
-        })
+
         viewModel.subscriptionsList.observe(viewLifecycleOwner, Observer { sublist ->  adapter.data = sublist })
         viewModel.navigateToArtistHomePage.observe(viewLifecycleOwner, Observer {
             if(it){
-                this.findNavController().navigate(R.id.action_homeFragment2_to_artistHomeNavHostActivity)
+                this.findNavController().navigate(R.id.action_homeFragment_to_artistHomeNavHostActivity)
                 viewModel.navigatedToArtistHome()
             }
+        })
+
+        viewModel.navigateToExploreActivity.observe(viewLifecycleOwner, Observer {
+            if(it){
+                this.findNavController().navigate(R.id.action_homeFragment_to_exploreActivity)
+                viewModel.navigatedToExploreActivity()
+            }
+
         })
         return view
     }
