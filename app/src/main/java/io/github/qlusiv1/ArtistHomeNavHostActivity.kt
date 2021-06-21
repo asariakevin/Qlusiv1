@@ -1,4 +1,4 @@
-package io.github.qlusiv1.screens.home.subscriptions_navhost
+package io.github.qlusiv1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
