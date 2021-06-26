@@ -15,5 +15,5 @@ class HomeFragmentStateAdapter(fragment: Fragment) : FragmentStateAdapter(fragme
         }
     }
 
-    override fun getItemCount(): Int  = 1
+    override fun getItemCount(): Int  = 3
 }
