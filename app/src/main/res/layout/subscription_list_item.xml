@@ -8,12 +8,15 @@
     android:layout_marginTop="16dp">
 
     <ImageView
+        android:layout_margin="8dp"
         android:id="@+id/profile_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@color/design_default_color_error"
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
+        android:padding="8dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
