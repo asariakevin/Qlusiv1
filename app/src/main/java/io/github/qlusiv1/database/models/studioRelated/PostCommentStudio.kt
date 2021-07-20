@@ -1,13 +1,12 @@
-package io.github.qlusiv1.database.models.creatorRelated
-
+package io.github.qlusiv1.database.models.studioRelated
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class CreatorWorkOfArtComment(
+data class PostCommentStudio(
     @PrimaryKey val id: Long,
-    val creatorWorkOfArtId: Long,
+    val postStudioId: Long,
     val creatorId: Long,
     val fanId: Long,
     val studioId: Long,
