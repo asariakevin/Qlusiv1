@@ -37,7 +37,10 @@ class SubscriptionsFragment : Fragment() {
         }
 
 
-        viewModel.subscriptionsList.observe(viewLifecycleOwner, Observer { sublist ->  adapter.data = sublist })
+        viewModel.subscriptionsList.observe(viewLifecycleOwner, Observer { sublist ->
+            adapter.data = sublist
+            println(sublist)
+        })
         viewModel.navigateToArtistHomePage.observe(viewLifecycleOwner, Observer {
             if(it){
                 this.findNavController().navigate(R.id.action_homeFragment_to_artistHomeNavHostActivity)

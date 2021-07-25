@@ -5,7 +5,7 @@ data class Post(
 )
 
 object Posts{
-//    val postsList = List(30){
-//        Post("Here we go again in the bahamas, how was your day")
-//    }
+    val postsList = List(30){
+        Post("Here we go again in the bahamas, how was your day")
+    }
 }

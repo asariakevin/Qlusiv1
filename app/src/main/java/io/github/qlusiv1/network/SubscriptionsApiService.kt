@@ -10,7 +10,7 @@ import retrofit2.http.GET
 
 
 // The base URL where our API is
-private const val BASE_URL = "https://7e3d955b7879.ngrok.io"
+private const val BASE_URL = "http://15cff8686da1.ngrok.io"
 
 /* Moshi Makes it easy to parse JSON into objects
 you can use GSON instead if you want*/

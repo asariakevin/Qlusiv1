@@ -21,17 +21,17 @@ class SubscriptionsViewModel : ViewModel() {
 
     init {
         Log.d("Viewmodel", "Initializing")
-        //getSubscriptions()
-        mockSubscriptionsList()
+        getSubscriptions()
+        //mockSubscriptionsList()
         navigateToArtistHomePage.value = false
         navigateToExploreActivity.value = false
         Log.d("Viewmodel", "Done Initializing")
     }
 
     private fun mockSubscriptionsList(){
-        subscriptionsList.value = List(20){
-            Subscription(1, "Kevin", "Today", "Tomm")
-        }
+      //  subscriptionsList.value = List(20){
+          //  Subscription(1, "Kevin", "Today", "Tomm")
+       // }
     }
     private fun getSubscriptions(){
 
