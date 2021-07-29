@@ -1,6 +1,6 @@
 package io.github.qlusiv1.screens.artistHome.posts
 
-import io.github.qlusiv1.database.models.Post
+import io.github.qlusiv1.network.dataTransferObjects.models.Post
 
 
 

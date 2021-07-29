@@ -1,6 +1,6 @@
-package io.github.qlusiv1.database.models
+package io.github.qlusiv1.network.dataTransferObjects.models
 
-import io.github.qlusiv1.network.dataTransferObjects.models.Post
+import io.github.qlusiv1.database.models.Post
 
 data class Post(
         val title: String

@@ -9,5 +9,30 @@
         android:id="@+id/exploreTabLayoutHolderFragment"
         android:name="io.github.qlusiv1.screens.explore.ExploreTabLayoutHolderFragment"
         android:label="fragment_explore_tab_layout_holder"
-        tools:layout="@layout/fragment_explore_tab_layout_holder" />
+        tools:layout="@layout/fragment_explore_tab_layout_holder" >
+        <argument
+            android:name="fanId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistProfileFragment"
+        android:name="io.github.qlusiv1.screens.artistProfile.ArtistProfileFragment"
+        android:label="artist_profile_fragment"
+        tools:layout="@layout/artist_profile_fragment" >
+        <argument
+            android:name="fanId"
+            app:argType="long" />
+        <argument
+            android:name="artistId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/creatorsFragment"
+        android:name="io.github.qlusiv1.screens.explore.creators.CreatorsFragment"
+        android:label="creators_fragment"
+        tools:layout="@layout/creators_fragment" >
+        <action
+            android:id="@+id/action_creatorsFragment_to_artistProfileFragment"
+            app:destination="@id/artistProfileFragment" />
+    </fragment>
 </navigation>
