@@ -15,7 +15,7 @@ import io.github.qlusiv1.screens.subscriptions.SubscriptionClickListener
 
 
 
-class CreatorsAdapter : RecyclerView.Adapter<CreatorsAdapter.ViewHolder>() {
+class CreatorsAdapter(val clickListener: CreatorListItemClickListener) : RecyclerView.Adapter<CreatorsAdapter.ViewHolder>() {
 
     var data = listOf<CreatorProfile>()
         set(value){
@@ -24,6 +24,8 @@ class CreatorsAdapter : RecyclerView.Adapter<CreatorsAdapter.ViewHolder>() {
         }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+        val creatorListItemViewGroup = itemView.findViewById<ViewGroup>(R.id.creator_list_item_group_view)
         val creatorImageView : ImageView = itemView.findViewById(R.id.creator_imageview)
         val creatorName: TextView = itemView.findViewById(R.id.creator_name)
         val creatorNumberOfFollowers: TextView = itemView.findViewById(R.id.creator_number_of_followers)
@@ -46,7 +48,14 @@ class CreatorsAdapter : RecyclerView.Adapter<CreatorsAdapter.ViewHolder>() {
         holder.creatorNumberOfFollowers.text = creator.numberOfFollowers.toString()
         holder.creatorNumberOfPlays.text = creator.numberOfPlays.toString()
 
+        holder.creatorListItemViewGroup.setOnClickListener{
+            clickListener.onclick(creator.creatorId)
+        }
     }
 
 
+}
+
+class CreatorListItemClickListener( val clickListener: (Long) -> Unit){
+    fun onclick( creatorId : Long) = clickListener(creatorId)
 }

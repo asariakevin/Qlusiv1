@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="4dp"
    
-
+    android:id="@+id/creator_list_item_group_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 

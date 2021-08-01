@@ -35,6 +35,8 @@ android {
 }
 
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+
 
 dependencies {
     def nav_version = "2.3.5"

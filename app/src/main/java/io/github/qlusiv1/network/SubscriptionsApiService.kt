@@ -8,10 +8,11 @@ import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 
 // The base URL where our API is
-private const val BASE_URL = "http://68ac14c0b4e7.ngrok.io"
+private const val BASE_URL = "http://58fe881cfaca.ngrok.io"
 
 /* Moshi Makes it easy to parse JSON into objects
 you can use GSON instead if you want*/
@@ -40,6 +41,9 @@ interface SubscriptionsApiService{
 
     @GET("artists/explore.json")
     fun creatorsExplore(): Deferred<List<CreatorProfile>>
+
+    @GET("artists/{id}/profile.json")
+    fun getCreatorProfile(@Path("id") id: Long): Deferred<CreatorProfile>
 }
 
 /* Singleton to create this instance only once

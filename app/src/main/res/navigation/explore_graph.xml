@@ -13,15 +13,15 @@
         <argument
             android:name="fanId"
             app:argType="long" />
+        <action
+            android:id="@+id/action_exploreTabLayoutHolderFragment_to_artistProfileFragment"
+            app:destination="@id/artistProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/artistProfileFragment"
         android:name="io.github.qlusiv1.screens.artistProfile.ArtistProfileFragment"
         android:label="artist_profile_fragment"
         tools:layout="@layout/artist_profile_fragment" >
-        <argument
-            android:name="fanId"
-            app:argType="long" />
         <argument
             android:name="artistId"
             app:argType="long" />

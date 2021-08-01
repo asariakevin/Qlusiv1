@@ -12,10 +12,15 @@ import kotlinx.coroutines.launch
 
 class CreatorsViewModel : ViewModel() {
     var creators = MutableLiveData<List<CreatorProfile>>()
+    var selectedCreatorId : Long = 1
+    var navigateToCreatorProfile = MutableLiveData<Boolean>()
+    fun navigatedToCreatorProfile() {navigateToCreatorProfile.value = false}
 
     init {
         getCreatorProfiles()
+        navigateToCreatorProfile.value = false
     }
+
 
     private fun getCreatorProfiles(){
 
