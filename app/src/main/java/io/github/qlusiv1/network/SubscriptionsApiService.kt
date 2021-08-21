@@ -9,15 +9,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 // The base URL where our API is
-private const val BASE_URL = "http://58fe881cfaca.ngrok.io"
+private const val BASE_URL = "http://0d0b-102-2-7-50.ngrok.io"
 
 /* Moshi Makes it easy to parse JSON into objects
 you can use GSON instead if you want*/
 
-private val moshi = Moshi.Builder()
+private val moshi = Moshi.Builder() 
         .add(KotlinJsonAdapterFactory())
         .build()
 
@@ -44,6 +45,12 @@ interface SubscriptionsApiService{
 
     @GET("artists/{id}/profile.json")
     fun getCreatorProfile(@Path("id") id: Long): Deferred<CreatorProfile>
+
+    @GET("artists/subscribe.json")
+    fun subscribeToArtist(
+        @Query("artist_id") artistId: Long,
+        @Query("fan_id") fan_id: Long
+    ): Deferred<CreatorProfile>
 }
 
 /* Singleton to create this instance only once

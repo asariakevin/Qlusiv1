@@ -10,9 +10,12 @@ import kotlinx.coroutines.launch
 class ArtistProfileViewModel : ViewModel() {
 
     var imageUrl  = MutableLiveData<String>()
-
+    var artistId: Long = 0
+    var fanId: Long = 1
 
     fun getArtistProfile(id: Long){
+
+        artistId = id
         viewModelScope.launch {
             var creatorProfile = SubscriptionsApi.retrofitService.getCreatorProfile(id)
 
@@ -30,5 +33,11 @@ class ArtistProfileViewModel : ViewModel() {
                 Log.d("Viewmodel", e.message!!)
             }
         }
+    }
+
+
+    fun subscribeToArtist(){
+
+       var creatorProfile =  SubscriptionsApi.retrofitService.subscribeToArtist(artistId,fanId)
     }
 }
