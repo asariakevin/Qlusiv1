@@ -16,9 +16,6 @@ import io.github.qlusiv1.screens.myCollection.MyCollectionViewModel
 
 class ArtistPosts : Fragment() {
 
-    companion object {
-        fun newInstance() = ArtistPosts()
-    }
 
     private lateinit var viewModel: ArtistPostsViewModel
 
@@ -33,7 +30,7 @@ class ArtistPosts : Fragment() {
         val recycler = view.findViewById(R.id.artist_posts_fragment_recyclerview) as RecyclerView
         recycler.adapter = adapter
 
-
+        viewModel.getPost()
         viewModel.posts.observe(viewLifecycleOwner, Observer { sublist ->  adapter.data = sublist })
         return view
         //return inflater.inflate(R.layout.artist_posts_fragment, container, false)

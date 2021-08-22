@@ -3,6 +3,8 @@ package io.github.qlusiv1.network
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import io.github.qlusiv1.network.dataTransferObjects.models.Post
+import io.github.qlusiv1.network.dataTransferObjects.models.Project
 import io.github.qlusiv1.network.dataTransferObjects.models.creatorRelated.CreatorProfile
 import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
@@ -13,7 +15,7 @@ import retrofit2.http.Query
 
 
 // The base URL where our API is
-private const val BASE_URL = "http://0d0b-102-2-7-50.ngrok.io"
+private const val BASE_URL = "https://ceb6-102-1-77-146.ngrok.io"
 
 /* Moshi Makes it easy to parse JSON into objects
 you can use GSON instead if you want*/
@@ -45,6 +47,10 @@ interface SubscriptionsApiService{
 
     @GET("artists/{id}/profile.json")
     fun getCreatorProfile(@Path("id") id: Long): Deferred<CreatorProfile>
+    @GET("artists/{id}/posts.json")
+    fun getCreatorPosts(@Path("id") id: Long): Deferred<List<Post>>
+    @GET("artists/{id}/projects.json")
+    fun getCreatorProjects(@Path("id") id: Long): Deferred<List<Project>>
 
     @GET("artists/subscribe.json")
     fun subscribeToArtist(

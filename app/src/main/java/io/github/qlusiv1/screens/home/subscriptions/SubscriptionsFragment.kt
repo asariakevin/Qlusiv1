@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.github.qlusiv1.R
+import io.github.qlusiv1.Selections
 import io.github.qlusiv1.screens.home.HomeFragment
 import io.github.qlusiv1.screens.home.subscriptions_navhost.SubscriptionsNavHostFragment
 
@@ -27,6 +28,7 @@ class SubscriptionsFragment : Fragment() {
         val view = inflater.inflate(R.layout.subscriptions_fragment, container, false)
         val adapter = SubscriptionsAdapter( SubscriptionClickListener { id ->
             viewModel.navigateToArtistHomePage.value = true
+            Selections.selectedArtistId = id.toLong()
         })
         val recycler = view.findViewById(R.id.subscriptions_recyclerview) as RecyclerView
         recycler.adapter = adapter

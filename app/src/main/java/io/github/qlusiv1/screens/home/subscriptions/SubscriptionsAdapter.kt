@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -21,6 +22,7 @@ class SubscriptionsAdapter(val clickListener: SubscriptionClickListener) : Recyc
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
+        val viewGroup: LinearLayout = itemView.findViewById(R.id.subscription_list_item_viewgroup)
         val artistName: TextView = itemView.findViewById(R.id.artist_name)
         val profileImage: ImageView = itemView.findViewById(R.id.profile_image)
         val numberOfPosts : TextView = itemView.findViewById(R.id.actual_number_of_new_posts)
@@ -44,7 +46,7 @@ class SubscriptionsAdapter(val clickListener: SubscriptionClickListener) : Recyc
         val subscription = data[position]
         holder.profileImage.load(subscription.creatorImageUri)
         holder.artistName.text = subscription.creatorName
-       // holder.artistName.setOnClickListener{clickListener.onclick(subscription.id)}
+        holder.viewGroup.setOnClickListener{clickListener.onclick(subscription.id)}
     }
 
 
