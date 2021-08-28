@@ -1,4 +1,4 @@
-package io.github.qlusiv1.screens.explore.catalogues
+package io.github.qlusiv1.screens.artistHome.catalogue
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

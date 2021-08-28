@@ -15,7 +15,7 @@ import retrofit2.http.Query
 
 
 // The base URL where our API is
-private const val BASE_URL = "https://ceb6-102-1-77-146.ngrok.io"
+private const val BASE_URL = "http://ad06-154-159-252-30.ngrok.io"
 
 /* Moshi Makes it easy to parse JSON into objects
 you can use GSON instead if you want*/
@@ -57,6 +57,12 @@ interface SubscriptionsApiService{
         @Query("artist_id") artistId: Long,
         @Query("fan_id") fan_id: Long
     ): Deferred<CreatorProfile>
+
+    @GET("artists/support.json")
+    fun supportProject(
+        @Query("fan_id") fanId: Long,
+        @Query("project_id") projectId: Long
+    ) : Deferred<Project>
 }
 
 /* Singleton to create this instance only once

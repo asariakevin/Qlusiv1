@@ -25,6 +25,7 @@ class SubscriptionsFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         viewModel = ViewModelProvider(this).get(SubscriptionsViewModel::class.java)
 
+        Selections.fanId = 1 //change , let this be in the viewmodel
         val view = inflater.inflate(R.layout.subscriptions_fragment, container, false)
         val adapter = SubscriptionsAdapter( SubscriptionClickListener { id ->
             viewModel.navigateToArtistHomePage.value = true

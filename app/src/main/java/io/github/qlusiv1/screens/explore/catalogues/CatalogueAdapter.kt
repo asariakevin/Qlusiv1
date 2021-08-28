@@ -1,4 +1,4 @@
-package io.github.qlusiv1.screens.artistHome.catalogue
+package io.github.qlusiv1.screens.explore.catalogues
 
 import android.view.LayoutInflater
 import android.view.View
